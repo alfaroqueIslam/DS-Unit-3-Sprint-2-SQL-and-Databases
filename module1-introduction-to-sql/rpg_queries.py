@@ -16,3 +16,31 @@ curs = conn.cursor()
 # How many total Characters? Table: charactercreator_character
 count_characters = 'SELECT COUNT(*) FROM charactercreator_character;'
 print(curs.execute(count_characters).fetchall())
+
+# How many total Clerics? Table: charactercreator_cleric
+count_cleric = 'SELECT COUNT(*) FROM charactercreator_cleric;'
+print(curs.execute(count_cleric).fetchall())
+
+# How many total Fighters? Table: charactercreator_fighter
+count_fighter = 'SELECT COUNT(*) FROM charactercreator_fighter;'
+print(curs.execute(count_fighter).fetchall())
+
+# How many total Mages? Table: charactercreator_mage
+count_mage = 'SELECT COUNT(*) FROM charactercreator_mage;'
+print(curs.execute(count_mage).fetchall())
+
+# How many total Theifs? Table: charactercreator_thief
+count_thief = 'SELECT COUNT(*) FROM charactercreator_thief;'
+print(curs.execute(count_thief).fetchall())
+
+# How many total Necromancers? Table: charactercreator_necromancer
+count_necromancer = 'SELECT COUNT(*) FROM charactercreator_necromancer;'
+print(curs.execute(count_necromancer).fetchall())
+
+# How many total items? Table: armory_item
+count_items = 'SELECT COUNT(*) FROM armory_item;'
+print(curs.execute(count_items).fetchall())
+
+# How many total weapons? Table: armory_weapon
+count_weapon = 'SELECT COUNT(*) FROM armory_weapon;'
+print(curs.execute(count_weapon).fetchall())
