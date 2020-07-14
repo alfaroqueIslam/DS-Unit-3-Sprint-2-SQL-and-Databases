@@ -15,7 +15,7 @@ pg_curs = pg_conn.cursor()
 sl_conn = sqlite3.connect('rpg_db.sqlite3')
 sl_curs = sl_conn.cursor()
 
-get_characters = 'SELECT COUNT(*) FROM charactercreator_character;'
+get_characters = 'SELECT * FROM charactercreator_character;'
 characters = sl_curs.execute(get_characters).fetchall()
 
 print(characters)
@@ -50,12 +50,19 @@ AND schemaname != 'information_schema';
 pg_curs.execute(show_tables)
 pg_curs.fetchall()
 
+example_insert = """
+INSERT INTO charactercreator_character
+(name, level, exp, hp, strength, intelligence, dexterity, wisdom)
+VALUES """ + str(characters[0][1:]) + ";"
+
+print(example_insert)
+
 for character in characters:
-  insert_character = """
+    insert_character = """
     INSERT INTO charactercreator_character
     (name, level, exp, hp, strength, intelligence, dexterity, wisdom)
     VALUES """ + str(character[1:]) + ";"
-  pg_curs.execute(insert_character)
+    pg_curs.execute(insert_character)
 
 pg_curs.execute('SELECT * FROM charactercreator_character LIMIT 5;')
 pg_curs.fetchall()
