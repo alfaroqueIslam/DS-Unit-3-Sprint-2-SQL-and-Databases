@@ -44,3 +44,11 @@ print(curs.execute(count_items).fetchall())
 # How many total weapons? Table: armory_weapon
 count_weapon = 'SELECT COUNT(*) FROM armory_weapon;'
 print(curs.execute(count_weapon).fetchall())
+
+# How many total items that are not weapons? Table: armory_item
+'''count_notweapon = 'SELECT COUNT(*) FROM armory_item MINUS SELECT COUNT(*) FROM armory_weapon;'
+print(curs.execute(count_notweapon).fetchall())'''
+
+# How many Items does each character have? (Return first 20 rows)
+count_distinct = 'SELECT COUNT(DISTINCT character_id) FROM charactercreator_character_inventory;'
+print(curs.execute(count_distinct).fetchall())
