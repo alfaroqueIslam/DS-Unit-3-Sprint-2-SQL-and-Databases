@@ -8,4 +8,5 @@ df = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/0047
 conn = sqlite3.connect("buddymove_holidayiq.sqlite3")
 curs = conn.cursor()
 #df.to_sql('buddymove_holidayiq', con=conn)
-print(curs.execute("SELECT COUNT(*) FROM buddymove_holidayiq").fetchall())
+print(curs.execute("SELECT COUNT(*) FROM buddymove_holidayiq;").fetchall())
+print(curs.execute("SELECT COUNT(*) FROM buddymove_holidayiq WHERE Nature >= 100 AND Shopping >= 100;").fetchall())
