@@ -10,7 +10,7 @@ sl_curs = sl_conn.cursor()
 get_characters = 'SELECT * FROM charactercreator_character;'
 characters = sl_curs.execute(get_characters).fetchall()
 
-client = pymongo.MongoClient("mongodb+srv://alfaroque5:<password>@cluster0.jij4e.mongodb.net/<dbname>?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://alfaroque5:dAsF9ZRMS1gM2Wah@cluster0.jij4e.mongodb.net/<dbname>?retryWrites=true&w=majority")
 db = client.test
 
 character_docs = []
