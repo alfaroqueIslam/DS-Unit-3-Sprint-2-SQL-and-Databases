@@ -6,9 +6,13 @@ client = pymongo.MongoClient("mongodb+srv://alfaroque5:dAsF9ZRMS1gM2Wah@cluster0
 db = client.test
 
 #How many total Characters are there?
+print('# of characters:', db.test.find({name : {$exists : True}}).count())
 #How many of each specific subclass?
 #How many total Items?
+print('# of characters:', db.test.find({item_id : {$exists : True}}).count())
 #How many of the Items are weapons? How many are not?
+print('# of characters:', db.test.find({item_ptr_id : {$exists : True}}).count())
+print('# of characters:', db.test.find({item_ptr_id : {$exists : False}}).count())
 #How many Items does each character have? (Return first 20 rows)
 #How many Weapons does each character have? (Return first 20 rows)
 #On average, how many Items does each Character have?
